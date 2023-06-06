@@ -1,0 +1,112 @@
+body {
+  background-color: #f2f2f2;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 10px;
+  gap: 30px;
+  margin: auto;
+
+  width: 400px;
+  height: 400px;
+
+  background: #CC6399;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-input input {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 5px 15px;
+  gap: 10px;
+
+  width: 211px;
+  height: 30px;
+
+  background: #ffffff;
+  border-radius: 10px;
+  outline: none;
+}
+
+.btn-entrar {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 15px;
+
+  width: 211px;
+  height: 30px;
+  color: #CC6399;
+  background: #ffffff;
+  border-radius: 10px;
+  outline: none;
+  
+}
+
+.esqueceu-senha {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 15px;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+}
+
+.registre-se {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 15px;
+  color: #0123ff;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+}
+
+.registra {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 15px;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+}
+
+.pai {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 12px;
+}
