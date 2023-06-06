@@ -4,11 +4,10 @@ import flower from "../../assets/flower-rosa.png";
 import listadmin from "../../assets/listadm.png";
 import list from "../../assets/list.png";
 import useradmin from "../../assets/useradm.png";
-import user from "../../assets/user.png";
-import { useEffect, useMemo } from "react";
+import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 const Header = ({ isAdm }) => {
-  const user = sessionStorage.getItem("user");
+  const user = JSON.parse(sessionStorage.getItem("user"));
   const navigate = useNavigate();
   const icons = useMemo(
     () =>
@@ -42,7 +41,7 @@ const Header = ({ isAdm }) => {
       <div className={isAdm ? "topnavbar-right adm" : "topnavbar-right"}>
         {user ? (
           <>
-            {isAdm && <p onClick={() => navigate("/adm")}>Produtos</p>}
+            {user?.isAdmin && <p onClick={() => navigate("/adm")}>Produtos</p>}
             <p onClick={() => navigate("/lista-pedidos")}>Meus Pedidos</p>
             <p onClick={handleSair}>Sair</p>
           </>

@@ -13,7 +13,7 @@ function Login() {
 
   const handleLogin = (e) => {
     axios
-      .post("http://localhost:3004/login", {
+      .post("http://localhost:3001/usuario/login", {
         nome: nome,
         senha: senha,
       })

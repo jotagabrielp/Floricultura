@@ -31,10 +31,13 @@ function AdmMain() {
   };
 
   useEffect(() => {
-    const user = sessionStorage.getItem("user");
+    const user = JSON.parse(sessionStorage.getItem("user"));
     if (!user) {
       navigate("/login", { state: { from: "/adm" } });
       return;
+    }
+    if(!user.isAdmin) {
+      navigate("/");
     }
     axios.get("http://localhost:3001/produtos/").then((response) => {
       setProdutos(response.data);
@@ -45,6 +48,12 @@ function AdmMain() {
     <>
       <Header isAdm />
       <div className="content">
+      <button
+          className="botao-adicionar-produto"
+          onClick={() => navigate("/adm/produto")}
+        >
+          Adicionar Produto
+        </button>
         <div className="produtos-grid">
           {produtos.map((produto) => {
             return (
@@ -55,12 +64,6 @@ function AdmMain() {
             );
           })}
         </div>
-        <button
-          className="botao-adicionar-produto"
-          onClick={() => navigate("/adm/produto")}
-        >
-          Adicionar Produto
-        </button>
       </div>
       {showModal && (
         <ExcluirModal onDelete={handleDelete} onCancel={handleCancel} />

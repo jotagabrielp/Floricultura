@@ -21,7 +21,7 @@ const ListaPedidos = () => {
   };
 
   const handleDeletePedido = (id) => {
-    axios.delete(`http://localhost:3002/vendas/${id}`).then(() => {
+    axios.delete(`http://localhost:3001/vendas/${id}`).then(() => {
       setPedidos(pedidos.filter((pedido) => pedido._id !== id));
     });
   };
@@ -32,7 +32,7 @@ const ListaPedidos = () => {
       return;
     }
     axios
-      .get("http://localhost:3002/vendas?userId=" + user._id)
+      .get("http://localhost:3001/vendas?userId=" + user._id)
       .then((response) => {
         setPedidos(response.data);
       });
@@ -41,6 +41,9 @@ const ListaPedidos = () => {
   return (
     <>
       <Header />
+      {
+        !pedidos.length > 0 ? (<p className="sem-pedidos">Não há pedidos para exibir</p>) : (
+
       <table className="tabela-pedidos">
         <tr>
           <th>Produto</th>
@@ -65,6 +68,8 @@ const ListaPedidos = () => {
           </tr>
         ))}
       </table>
+        )
+      }
       {showModal && (
         <EnderecoModal endereco={endereco} handleCancel={handleCancel} />
       )}

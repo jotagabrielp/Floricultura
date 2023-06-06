@@ -12,7 +12,7 @@ function Cadastroadm() {
   const handleRegister = () => {
     if (senha === confirmarSenha) {
       axios
-        .post("http://localhost:3004/registro", {
+        .post("http://localhost:3001/usuario/registro", {
           nome: nome,
           senha: senha,
         })

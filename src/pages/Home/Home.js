@@ -42,14 +42,6 @@ function Home() {
             })}
           </div>
         </div>
-        <div className="section">
-          <h1 className="title">O que os clientes estão comprando</h1>
-          <div className="produtos-grid">
-            {produtos.map((produto) => {
-              return <Produto produto={produto} />;
-            })}
-          </div>
-        </div>
       </div>
       <Footer />
     </>

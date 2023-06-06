@@ -37,7 +37,7 @@ export default function Venda() {
       return;
     }
     axios
-      .post("http://localhost:3002/vendas", {
+      .post("http://localhost:3001/vendas", {
         nomeProduto: state.produto.nome,
         valorTotal: (parseFloat(state.produto.preco) * count).toFixed(2),
         quantidade: count,
