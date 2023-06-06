@@ -31,6 +31,11 @@ function AdmMain() {
   };
 
   useEffect(() => {
+    const user = sessionStorage.getItem("user");
+    if (!user) {
+      navigate("/login", { state: { from: "/adm" } });
+      return;
+    }
     axios.get("http://localhost:3001/produtos/").then((response) => {
       setProdutos(response.data);
     });

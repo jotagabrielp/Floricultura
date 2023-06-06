@@ -359,4 +359,5 @@ input[type=radio] {
     background-color: #0583F2;
     color: #FFF;
     border: none;
+    cursor: pointer;
 }

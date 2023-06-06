@@ -4,6 +4,6 @@
 }
 
 
-tr:nth-child(even) {
-    background-color: #D6EEEE;
+tr:nth-child(odd) {
+    background-color: #76a0e3;
   }

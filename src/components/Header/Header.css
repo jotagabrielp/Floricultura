@@ -15,7 +15,9 @@
     top: 0;
     position: absolute;
   }
-  
+  .logo {
+    cursor: pointer;
+  }
   .topnavbar-left {
     display: flex;
     flex-direction: row;
@@ -26,9 +28,16 @@
   .topnavbar-right {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     padding: 0 10px;
     gap: 20px;
+    color: #CC6399;
+  }
+  .topnavbar-right p {
+    cursor: pointer;
   }
   
+  .adm {
+    color: #0583F2;
+  }

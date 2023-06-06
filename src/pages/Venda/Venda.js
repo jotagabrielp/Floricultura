@@ -2,11 +2,21 @@ import { useEffect, useState } from "react";
 import Header from "../../components/Header/Header";
 import flor from "./../../assets/flor.png";
 import "./Venda.css";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function Venda() {
+  const [id, setId] = useState("");
   const [count, setCount] = useState(1);
+  const [CEP, setCEP] = useState();
+  const [numero, setNumero] = useState();
+  const [logradouro, setLogradouro] = useState();
+  const [complemento, setComplemento] = useState("");
   const { state } = useLocation();
+  const navigate = useNavigate();
+  if (!state?.produto) {
+    navigate("/");
+  }
   useEffect(() => {
     if (count < 1) {
       setCount(1);
@@ -19,6 +29,39 @@ export default function Venda() {
       setCount(count - 1);
     }
   };
+
+  const handleConfirm = () => {
+    const allTouched = CEP && numero && logradouro;
+    if (!allTouched) {
+      alert("Preencha todos os campos");
+      return;
+    }
+    axios
+      .post("http://localhost:3002/vendas", {
+        nomeProduto: state.produto.nome,
+        valorTotal: (parseFloat(state.produto.preco) * count).toFixed(2),
+        quantidade: count,
+        userId: id,
+        endereco: {
+          CEP: CEP,
+          numero: numero,
+          logradouro: logradouro,
+          complemento: complemento,
+        },
+      })
+      .then(() => {
+        navigate("/lista-pedidos");
+      });
+  };
+
+  useEffect(() => {
+    const user = sessionStorage.getItem("user");
+    if (!user) {
+      navigate("/login", { state: { from: "/venda", ...state } });
+    } else {
+      setId(JSON.parse(user).id);
+    }
+  }, []);
   return (
     <>
       <Header />
@@ -44,7 +87,7 @@ export default function Venda() {
               <img id="img-product" src={flor} alt="" />
             </td>
             <td>
-              <span id="name">Girassol</span>
+              <span id="name">{state.produto.nome}</span>
             </td>
             <td>
               <button onClick={handleDecrease}>-</button>
@@ -56,7 +99,9 @@ export default function Venda() {
               <button onClick={() => setCount(count + 1)}>+</button>
             </td>
             <td>
-              <span id="price">R$80,00</span>
+              <span id="price">
+                R$ {(parseFloat(state.produto.preco) * count).toFixed(2)}
+              </span>
             </td>
           </tr>
         </table>
@@ -66,24 +111,48 @@ export default function Venda() {
           <div className="grid-container">
             <div className="grid-item">
               {" "}
-              <input type="text" value="CEP" />
+              <input
+                type="text"
+                placeholder="CEP"
+                value={CEP}
+                onChange={(e) => setCEP(e.target.value)}
+              />
             </div>
             <div className="grid-item">
               {" "}
-              <input type="text" value="Número" />
+              <input
+                type="text"
+                placeholder="Logradouro"
+                value={logradouro}
+                onChange={(e) => setLogradouro(e.target.value)}
+              />
+            </div>
+            <div className="grid-item">
+              {" "}
+              <input
+                type="text"
+                placeholder="Numero"
+                value={numero}
+                onChange={(e) => setNumero(e.target.value)}
+              />
             </div>
 
             <div className="grid-item">
               {" "}
-              <input type="text" value="Logradouro" />
-            </div>
-            <div className="grid-item">
-              {" "}
-              <input type="text" value="Complemento" />
+              <input
+                type="text"
+                placeholder="Complemento"
+                value={complemento}
+                onChange={(e) => setComplemento(e.target.value)}
+              />
             </div>
           </div>
         </div>
-        <button type="submit" className="btn-finalizar-compra">
+        <button
+          type="submit"
+          className="btn-finalizar-compra"
+          onClick={handleConfirm}
+        >
           Confirmar pedido
         </button>
       </div>
