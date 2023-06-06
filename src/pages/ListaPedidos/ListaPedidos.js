@@ -26,13 +26,14 @@ const ListaPedidos = () => {
     });
   };
   useEffect(() => {
-    const user = sessionStorage.getItem("user");
+    const user = JSON.parse(sessionStorage.getItem("user"));
+    console.log(user);
     if (!user) {
       navigate("/login", { state: { from: "/lista-pedidos" } });
       return;
     }
     axios
-      .get("http://localhost:3001/vendas?userId=" + user._id)
+      .get("http://localhost:3001/vendas?userId=" + user.id)
       .then((response) => {
         setPedidos(response.data);
       });
