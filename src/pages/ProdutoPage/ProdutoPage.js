@@ -4,7 +4,7 @@ import Header from "../../components/Header/Header";
 const ProdutoPage = () => {
   return (
     <>
-      <Header/>
+      <Header />
       <div className="produto-page-content">
         <div className="produto-description">
           <img src={flor} alt="" className="produto-description-image" />
@@ -15,14 +15,8 @@ const ProdutoPage = () => {
               <span className="caption">
                 À vista no pix até <span className="green">(5%OFF)</span>
               </span>
-              <span className="caption">ou 2x de R$40,00 sem juros</span>
             </div>
             <div className="produto-description-form">
-              <input
-                placeholder="Inserir CEP"
-                className="cep-input"
-                type="text"
-              />
               <button className="botao-comprar">Comprar agora</button>
             </div>
           </div>

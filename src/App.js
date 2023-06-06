@@ -9,18 +9,22 @@ import Cadastroadm from "./pages/Cadastroadm";
 import Redefinicao from "./pages/Redefinicao";
 import Enviado from "./pages/Enviado";
 import ProdutoPage from "./pages/ProdutoPage/ProdutoPage";
+import AdmMain from "./pages/AdmMain/AdmMain";
+import Venda from "./pages/Venda/Venda";
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route exact path="/login" element={<Login />} />
-        <Route path="/adm" element={<Adm />} />
+        <Route path="/adm" element={<AdmMain />} />
+        <Route path="/adm/produto" element={<Adm />} />
         <Route path="/" element={<Home />} />
         <Route path="/cadastroadm" element={<Cadastroadm />} />
         <Route path="/redefinicao" element={<Redefinicao />} />
         <Route path="/enviado" element={<Enviado />} />
         <Route path="/produto" element={<ProdutoPage />} />
+        <Route path="/venda" element={<Venda />} />
       </Routes>
     </Router>
   );

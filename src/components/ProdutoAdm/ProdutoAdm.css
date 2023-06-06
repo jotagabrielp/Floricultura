@@ -1,0 +1,16 @@
+.button-container-adm {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.botao-editar-produto, .botao-excluir-produto  {
+    height: 45px;
+    cursor: pointer;
+    background: #0583F2;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    flex: .46;
+    }

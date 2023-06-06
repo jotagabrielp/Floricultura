@@ -1,0 +1,362 @@
+/* ******************* */
+/* INFORMAÇÕES DA TELA */
+/* ******************* */
+.venda-container{
+    margin-top: 60px;
+    font-family: Arial, Helvetica, sans-serif;
+    /* background-color: darkgrey; */
+}
+
+/* ******************************** */
+/* INFORMAÇÕES DO PRODUTO EM RESUMO */
+/* ******************************** */
+
+table {
+    width: 100%;
+    text-align: center;
+}
+td {
+    width: 70px;
+}
+#title {
+    margin: 10px auto 80px auto;
+    text-align: center;
+    letter-spacing: -0.32px;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+form {
+    padding: 0px 2rem;
+}
+
+#info span {
+    padding: 0px;
+    font-weight: 500;
+    margin-bottom: 0px;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: -0.32px;
+    margin-left: 13rem;
+    padding-right: 4rem;
+    padding-left: 2rem;
+}
+
+#product-info {
+    display: flex;
+    /* border: 1px red solid; */
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+#product-info img {
+    /* border: 1px red solid; */
+    padding: 0px;
+    /* padding-right: 2rem; */
+    width: 116px;
+    margin-left: 13rem;
+    margin-right: 17rem;
+}
+
+#product-data {
+    /* border: 1px red solid; */
+    font-size: 20px;
+    padding: 0rem;
+    position: relative;
+    text-align: center;
+    display: inline;
+    /* margin: 0rem 4rem 0rem 19rem; */
+    justify-content: space-between;
+    /* margin-left:1rem; */
+    /* margin-right:20px; */
+    padding-bottom: 2rem;
+}
+
+
+hr {
+    /* border: 1px red solid; */
+    color: #707070;
+    padding: 0px;
+}
+
+.image {
+    width: 200px;
+}
+#frete {
+    /* border: 1px red solid; */
+    /* display: inline-block; */
+    margin-top: 0rem;
+    /* margin-right: 0rem; */
+    /* margin-bottom: 5rem; */
+    /* margin-left: -10px; */
+    padding: 0rem;
+}
+
+/* *********************** */
+/* CALCULAR VALOR DO FRETE */
+/* *********************** */
+
+#valor-frete-title {
+    /* border: 1px red solid; */
+    display: flex;
+    font-size: 25px;
+    padding: 0rem;
+    /* margin-top: 0.125rem; */
+    /* margin-left: 2rem; */
+    /* margin: 0rem; */
+}
+
+#cep {
+    /* border: 1px solid red; */
+    padding: 0.5rem 0rem 1.25rem 0rem;
+    margin-left: 1rem;
+}
+
+#search-cep {
+    /* border: 1px solid red; */
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0rem;
+}
+
+#submit {
+    display: inline-flex;
+    /* border: 1px solid red; */
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-left: 0.5rem;
+    width: 1%;
+    padding-left: 1rem;
+
+}
+
+#cep-desconhecido {
+    /* border: 1px solid red; */
+    padding: 0rem;
+    margin-left: 0.5rem;
+    text-decoration: underline;
+    font-size: 13px;
+}
+
+/* ******************* */
+/* ENDEREÇO DE ENTREGA */
+/* ******************* */
+
+#endereco-entrega {
+    /* border: 1px red solid; */
+    font-size: 30px;
+    width: 50%;
+    display: block;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 1.5rem;
+    margin-bottom: 60px
+}
+
+#title-deliver {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.grid-container {
+    text-align: center;
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 2rem;
+    row-gap: 1rem;
+    /* gap: 1.5rem;  */
+}
+
+.grid-item {
+    /* border: 1px solid red; */
+    /* width: 2rem; */
+    margin: 0rem;
+    /* margin-right: 0rem;
+    margin-bottom: 0rem; */
+    padding: 0rem;
+    /* padding-left: 0rem;
+    padding-right: 0rem;
+    padding-top: 0rem;
+    padding-bottom: 0rem; */
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    justify-content: center;
+    margin:0rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 36px;
+    text-align: center;
+}
+
+.row input{
+    cursor: pointer;
+    padding-right: 1rem;
+}
+
+#opcoes-entrega {
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#opcoes-deliver {
+    /* border: 1px red solid; */
+    font-size: 30px;
+    margin: 0rem;
+    padding: 0rem;
+    /* margin-bottom: 1rem; */
+}
+
+/* ***************** */
+/* OPÇÕES DE ENTREGA */
+/* ***************** */
+
+#payment {
+    padding: 0rem;
+    margin: 0rem;
+}
+
+
+#method-payment {
+    /* border: 1px solid red; */
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+
+}
+
+#method-payment span{
+    /* border: 1px solid red; */
+    font-size: 20px;
+    padding: 0rem;
+    margin: 0rem;
+    margin-right: 20rem;
+}
+
+#credit-card{
+    /* border: 1px solid red; */
+    /* padding: 0rem; */
+    padding-top: 0rem;
+    padding-right: 0rem;
+    padding-left: 0rem;
+    padding-bottom: 0rem;
+    /* padding-left: 6rem;
+    padding-right: 3rem; */
+    margin-left: 11rem;
+    margin-right: 0rem;
+}
+
+#img-product {
+    width: 50%;
+    height: auto;
+}
+#credit-card img{
+    /* padding-right: 3rem; */
+    /* border: 1px solid red; */
+    display: block;
+    width: 5rem;
+    margin: 0rem 2.25rem 0rem 2.25rem;
+    padding: 0rem;
+    padding-bottom: 0rem;
+}
+
+#in-store{
+    /* border: 1px solid red; */
+    padding-top: 0rem;
+    padding-right: 0rem;
+    padding-left: 0rem;
+    padding-bottom: 0rem;
+    margin-left: 8rem;
+    margin-right: 0rem;
+}
+
+#in-store img{
+    /* border: 1px solid red; */
+    display: block;
+    width: 5rem;
+    margin: 0rem 1.25rem 0rem 1.25rem;
+    padding: 0rem;
+    padding-bottom: 0rem;
+}
+
+#pix{
+    /* border: 1px solid red; */
+    padding-top: 0rem;
+    padding-right: 0rem;
+    padding-left: 0rem;
+    padding-bottom: 0rem;
+    margin-left: 13rem;
+    margin-right: 4rem;
+}
+
+#pix img{
+    /* border: 1px solid red; */
+    display: block;
+    width: 5rem;
+    margin: 0rem;
+    padding: 0rem;
+    padding-bottom: 0rem;
+}
+
+#dados-cartao {
+    /* border: 1px solid red; */
+    padding: 0rem;
+    margin: 0rem;
+}
+
+#parcelas-titulo {
+    /* border: 1px solid red; */
+    display: block;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 0rem;
+    /* margin-top: 2rem; */
+    margin-bottom: 0.5rem;
+}
+
+#valores {
+    display: block;
+    /* border: 1px solid red; */
+    font-size: 1rem;
+    padding: 0rem;
+    padding: 0.5rem 5rem 0.5rem 0.2rem;
+}
+
+#continuar {
+    /* border: 1px solid red; */
+    text-align: center;
+    /* padding: 0.5rem; */
+    margin: 0rem;
+    margin-top: 1rem;
+}
+input[type=radio] {
+    color: red;
+    background-color: red;
+}
+
+.btn-finalizar-compra {
+    width: 450px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 60px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: #0583F2;
+    color: #FFF;
+    border: none;
+}
